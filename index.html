@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal — WhatsApp Rate Formatter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-pattern"></div>
+    
+    <div class="container">
+        <div class="main-card">
+            <!-- Header Section -->
+            <div class="header">
+                 <div class="logo-container">
+                    <img src="/assets/vk_jewellers_logo_noBG.png" alt="Venkateswara Jeweller's Logo" class="logo">
+                </div>
+                <h1 class="title">Venkateswara Jeweller's</h1>
+                <p class="subtitle">Premium WhatsApp Rate Generator</p>
+            </div>
+
+            <!-- Form Section -->
+            <div class="form-section">
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label for="shop">Shop Name</label>
+                        <input id="shop" type="text" value="VENKATESWARA JEWELLER'S" readonly>
+                        <div class="input-highlight"></div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="date">Date</label>
+                        <input id="date" type="text" readonly>
+                        <div class="input-highlight"></div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="gold">Gold (22ct — 1gm)</label>
+                        <input id="gold" placeholder="10424" inputmode="numeric">
+                        <div class="input-highlight"></div>
+                        <span class="currency-symbol">₹</span>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="silver">Silver (10gm)</label>
+                        <input id="silver" placeholder="1330" inputmode="numeric">
+                        <div class="input-highlight"></div>
+                        <span class="currency-symbol">₹</span>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="gattu">Gattu Bangaram (optional)</label>
+                        <input id="gattu" placeholder="11320" inputmode="numeric">
+                        <div class="input-highlight"></div>
+                        <span class="currency-symbol">₹</span>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="address">Address / Contact</label>
+                        <input id="address" value="Mudiyam Complex, Proddatur | 9032641710" readonly>
+                        <div class="input-highlight"></div>
+                    </div>
+
+                    <div class="input-group full-width">
+                        <label for="extra">Extra Note (optional)</label>
+                        <input id="extra" placeholder="Open 10 AM - 8 PM">
+                        <div class="input-highlight"></div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button class="btn btn-primary" onclick="generateAndOpen()">
+                        <!-- <span class="btn-icon">✨</span> -->
+                         <span class="btn-icon">
+                            <img src="assets/icons8-formatting-32.png" alt="Format" class="btn-img">
+                         </span>
+                        Format & Send
+                        <span class="btn-shine"></span>
+                    </button>
+                    <button class="btn btn-secondary" onclick="generatePreview()">
+                        <!-- <span class="btn-icon">👁️</span> -->
+                        <span class="btn-icon">
+                            <img src="/assets/eye.png" alt="Preview" class="btn-img">
+                        </span>
+                        Preview
+                    </button>
+                    <button class="btn btn-outline" onclick="copyPreview()">
+                        <!-- <span class="btn-icon">📋</span> -->
+                         <span class="btn-icon">
+                            <img src="/assets/files.png" alt="Copy" class="btn-img">
+                        </span>
+                        Copy
+                    </button>
+                    <button class="btn btn-ghost" onclick="clearForm()">
+                        <!-- <span class="btn-icon">🗑️</span> -->
+                         <span class="btn-icon">
+                            <img src="/assets/clean.png" alt="Clear" class="btn-img">
+                        </span>
+                        Clear
+                    </button>
+                </div>
+            </div>
+
+            <!-- Preview Section -->
+            <div class="preview-section">
+                <div class="preview-header">
+                    <h3>WhatsApp Preview</h3>
+                    <div class="whatsapp-indicator">
+                        <div class="indicator-dot"></div>
+                        <span>Ready to send</span>
+                    </div>
+                </div>
+                
+                <div class="preview-container">
+                    <textarea id="output" readonly placeholder="Your formatted message will appear here..."></textarea>
+                    <div class="preview-overlay"></div>
+                </div>
+
+                <div class="preview-actions">
+                    <button class="btn btn-whatsapp" onclick="openWhatsApp()">
+                        <!-- <span class="btn-icon">💬</span> -->
+                         <span class="btn-icon">
+                            <img src="/assets/whatsapp.png" alt="WhatsApp" class="btn-img" style="height: 40px; width: 40px">
+                        </span>
+                        Open WhatsApp
+                        <span class="btn-shine"></span>
+                    </button>
+                    <button class="btn btn-download" onclick="downloadText()">
+                        <!-- <span class="btn-icon">⬇️</span> -->
+                         <span class="btn-icon">
+                            <img src="/assets/download.png" alt="Download" class="btn-img" style="height: 40px; height: 40;">
+                        </span>
+                        Download
+                    </button>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer">
+                <div class="footer-content">
+                    <!-- <div class="footer-icon">💎</div> -->
+                     <span class="btn-icon">
+                            <img src="/assets/gold.png" alt="Gold_icon"  style="height: 80px; height: 80;">
+                    </span>
+                    <p>Professional rate formatting for WhatsApp delivery</p>
+                    <small>&copy; 2025 Venkateswara Jeweller's. All rights reserved.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-spinner">
+            <div class="spinner-ring"></div>
+            <div class="spinner-ring"></div>
+            <div class="spinner-ring"></div>
+        </div>
+        <p>Formatting your message...</p>
+    </div>
+
+    <!-- Success Toast -->
+    <div id="successToast" class="toast">
+        <div class="toast-icon">✅</div>
+        <div class="toast-content">
+            <h4>Success!</h4>
+            <p>Message copied to clipboard</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
