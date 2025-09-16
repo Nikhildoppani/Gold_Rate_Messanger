@@ -749,7 +749,7 @@ input:focus + .input-highlight {
 }
 
 .logo {
-  width: 100px;      /* adjust size as needed */
+  width: 150px;      /* adjust size as needed */
   height: auto;
   animation: logoFloat 2s ease-in-out infinite alternate;
   border-radius: var(--radius-lg); /* optional, makes edges rounded */

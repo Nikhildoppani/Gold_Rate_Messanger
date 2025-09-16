@@ -383,12 +383,12 @@ const app = {
           e.target.value = value;
           
           // Auto-generate preview on valid input
-          if (value && parseFloat(value) > 0) {
-            clearTimeout(this.previewTimeout);
-            this.previewTimeout = setTimeout(() => {
-              this.generatePreview();
-            }, 1000);
-          }
+          // if (value && parseFloat(value) > 0) {
+          //   clearTimeout(this.previewTimeout);
+          //   this.previewTimeout = setTimeout(() => {
+          //     this.generatePreview();
+          //   }, 1000);
+          // }
         });
       }
     });
