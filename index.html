@@ -31,7 +31,7 @@
             <!-- Form Section -->
             <div class="form-section">
                 <div class="input-grid">
-                    <div class="input-group">
+                    <div class="input-group" hidden>
                         <label for="shop">Shop Name</label>
                         <input id="shop" type="text" value="VENKATESWARA JEWELLER'S" readonly>
                         <div class="input-highlight"></div>
@@ -45,32 +45,32 @@
 
                     <div class="input-group">
                         <label for="gold">Gold (22ct — 1gm)</label>
-                        <input id="gold" placeholder="10424" inputmode="numeric">
+                        <input id="gold" placeholder="Gold 22ct" inputmode="numeric">
                         <div class="input-highlight"></div>
                         <span class="currency-symbol">₹</span>
                     </div>
 
                     <div class="input-group">
                         <label for="silver">Silver (10gm)</label>
-                        <input id="silver" placeholder="1330" inputmode="numeric">
+                        <input id="silver" placeholder="Silver" inputmode="numeric">
                         <div class="input-highlight"></div>
                         <span class="currency-symbol">₹</span>
                     </div>
 
                     <div class="input-group">
-                        <label for="gattu">Gattu Bangaram (optional)</label>
-                        <input id="gattu" placeholder="11320" inputmode="numeric">
+                        <label for="gattu">Gold (24ct — 1gm)</label>
+                        <input id="gattu" placeholder="Gold 24ct" inputmode="numeric">
                         <div class="input-highlight"></div>
                         <span class="currency-symbol">₹</span>
                     </div>
 
-                    <div class="input-group">
+                    <div class="input-group" hidden>
                         <label for="address">Address / Contact</label>
                         <input id="address" value="Mudiyam Complex, Proddatur | 9701082904" readonly>
                         <div class="input-highlight"></div>
                     </div>
 
-                    <div class="input-group full-width">
+                    <div class="input-group full-width" hidden>
                         <label for="extra">Extra Note (optional)</label>
                         <input id="extra" placeholder="Open 10 AM - 8 PM">
                         <div class="input-highlight"></div>
@@ -82,18 +82,17 @@
                     <button class="btn btn-primary" onclick="generateAndOpen()">
                         <!-- <span class="btn-icon">✨</span> -->
                          <span class="btn-icon">
-                            <img src="assets/icons8-formatting-32.png" alt="Format" class="btn-img">
-                         </span>
+                            <img src="/assets/whatsapp.png" alt="WhatsApp" class="btn-img" style="height: 40px; width: 40px">
+                        </span>
                         Format & Send
                         <span class="btn-shine"></span>
                     </button>
-                    <button class="btn btn-secondary" onclick="generatePreview()">
-                        <!-- <span class="btn-icon">👁️</span> -->
+                    <!-- <button class="btn btn-secondary" onclick="generatePreview()">
                         <span class="btn-icon">
                             <img src="/assets/eye.png" alt="Preview" class="btn-img">
                         </span>
                         Preview
-                    </button>
+                    </button> -->
                     <button class="btn btn-outline" onclick="copyPreview()">
                         <!-- <span class="btn-icon">📋</span> -->
                          <span class="btn-icon">
@@ -101,13 +100,12 @@
                         </span>
                         Copy
                     </button>
-                    <button class="btn btn-ghost" onclick="clearForm()">
-                        <!-- <span class="btn-icon">🗑️</span> -->
+                    <!-- <button class="btn btn-ghost" onclick="clearForm()">
                          <span class="btn-icon">
                             <img src="/assets/clean.png" alt="Clear" class="btn-img">
                         </span>
                         Clear
-                    </button>
+                    </button> -->
                 </div>
             </div>
 
@@ -135,13 +133,12 @@
                         Open WhatsApp
                         <span class="btn-shine"></span>
                     </button>
-                    <button class="btn btn-download" onclick="downloadText()">
-                        <!-- <span class="btn-icon">⬇️</span> -->
+                    <!-- <button class="btn btn-download" onclick="downloadText()">
                          <span class="btn-icon">
                             <img src="/assets/download.png" alt="Download" class="btn-img" style="height: 40px; height: 40;">
                         </span>
                         Download
-                    </button>
+                    </button> -->
                 </div>
             </div>
 
