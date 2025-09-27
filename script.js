@@ -134,9 +134,9 @@ const messageBuilder = {
     
     if (data.address) {
       const [shopAddress, contact, mapLink] = data.address.split('|');
-      lines.push(`📍 ${shopAddress.trim()} | ${contact ? contact.trim() : ''}`);
+      lines.push(`*Address :* ${shopAddress.trim()} | ${contact ? contact.trim() : ''}`);
       if (mapLink) {
-        lines.push(`🔗 *Location :* ${mapLink.trim()}`);
+        lines.push(`*Location :* ${mapLink.trim()}`);
       }
     }
     
