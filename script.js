@@ -136,7 +136,7 @@ const messageBuilder = {
       const [shopAddress, contact, mapLink] = data.address.split('|');
       lines.push(`📍 ${shopAddress.trim()} | ${contact ? contact.trim() : ''}`);
       if (mapLink) {
-        lines.push(`🔗 *Location :*${mapLink.trim()}`);
+        lines.push(`🔗 *Location :* ${mapLink.trim()}`);
       }
     }
     
