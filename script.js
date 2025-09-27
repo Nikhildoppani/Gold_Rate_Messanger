@@ -133,7 +133,11 @@ const messageBuilder = {
     lines.push("━━━━━━━━━━━━━━━━━");
     
     if (data.address) {
-      lines.push(`📍 ${data.address}`);
+      const [shopAddress, contact, mapLink] = data.address.split('|');
+      lines.push(`📍 ${shopAddress.trim()} | ${contact ? contact.trim() : ''}`);
+      if (mapLink) {
+        lines.push(`🔗 *Location :*${mapLink.trim()}`);
+      }
     }
     
     if (data.extra) {
